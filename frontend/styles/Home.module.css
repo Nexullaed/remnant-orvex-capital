@@ -1,0 +1,319 @@
+.page {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(38, 92, 149, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(16, 120, 98, 0.16), transparent 24%),
+    linear-gradient(160deg, #f4f7fb 0%, #eef2f8 48%, #e3e9f1 100%);
+  color: #142132;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 28px;
+  position: relative;
+}
+
+.glowA,
+.glowB {
+  border-radius: 999px;
+  filter: blur(20px);
+  pointer-events: none;
+  position: absolute;
+}
+
+.glowA {
+  background: rgba(38, 92, 149, 0.16);
+  height: 320px;
+  left: -80px;
+  top: 120px;
+  width: 320px;
+}
+
+.glowB {
+  background: rgba(16, 120, 98, 0.16);
+  height: 260px;
+  right: -60px;
+  top: 80px;
+  width: 260px;
+}
+
+.topbar,
+.container {
+  margin: 0 auto;
+  max-width: 1180px;
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.brand {
+  color: #10345c;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.tagline {
+  color: #4e6178;
+  margin: 6px 0 0;
+}
+
+.nav {
+  align-items: center;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(20, 33, 50, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 16px 40px rgba(16, 28, 45, 0.08);
+  display: flex;
+  gap: 10px;
+  padding: 8px;
+}
+
+.nav a {
+  border-radius: 999px;
+  color: #22476d;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.nav a:hover {
+  background: rgba(38, 92, 149, 0.08);
+  color: #10345c;
+}
+
+.hero {
+  align-items: stretch;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.85fr);
+  margin-bottom: 26px;
+}
+
+.heroCopy,
+.heroPanel,
+.card {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(20, 33, 50, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 26px 60px rgba(16, 28, 45, 0.1);
+}
+
+.heroCopy {
+  padding: clamp(28px, 5vw, 54px);
+}
+
+.kicker {
+  color: #0f7a62;
+  display: inline-block;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.title {
+  color: #102a46;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(2.4rem, 5.2vw, 4.9rem);
+  letter-spacing: -0.05em;
+  line-height: 0.96;
+  margin: 0;
+  max-width: 11ch;
+}
+
+.subtitle {
+  color: #526579;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin: 22px 0 0;
+  max-width: 58ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.primaryButton,
+.secondaryButton {
+  border-radius: 999px;
+  display: inline-flex;
+  font-weight: 700;
+  padding: 15px 22px;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #10345c 0%, #1f5c95 100%);
+  box-shadow: 0 20px 35px rgba(31, 92, 149, 0.2);
+  color: #f7fbff;
+}
+
+.secondaryButton {
+  background: rgba(16, 52, 92, 0.06);
+  color: #10345c;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.highlights {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+}
+
+.highlights li {
+  align-items: center;
+  color: #31485f;
+  display: flex;
+  gap: 12px;
+}
+
+.highlights li::before {
+  background: linear-gradient(135deg, #0f7a62, #c28a3a);
+  border-radius: 999px;
+  content: "";
+  display: inline-block;
+  flex: 0 0 10px;
+  height: 10px;
+}
+
+.heroPanel {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+}
+
+.metric {
+  background: linear-gradient(160deg, rgba(246, 249, 252, 0.92), rgba(233, 240, 248, 0.92));
+  border: 1px solid rgba(20, 33, 50, 0.06);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.metric span {
+  color: #5a6e84;
+  display: block;
+  font-size: 0.84rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.metric strong {
+  color: #102a46;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.18rem;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  padding: 28px;
+}
+
+.card h2 {
+  color: #10345c;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.6rem;
+  margin: 0 0 16px;
+}
+
+.card p {
+  color: #4d6074;
+  line-height: 1.75;
+  margin: 0 0 14px;
+}
+
+.contactList {
+  display: grid;
+  gap: 14px;
+}
+
+.contactRow {
+  align-items: start;
+  background: rgba(16, 52, 92, 0.04);
+  border-radius: 18px;
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+}
+
+.contactRow span {
+  color: #607387;
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.contactRow strong {
+  color: #142132;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 960px) {
+  .page {
+    padding: 18px;
+  }
+
+  .hero,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2.5rem;
+    max-width: none;
+  }
+
+  .heroCopy,
+  .heroPanel,
+  .card {
+    border-radius: 22px;
+    padding: 22px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    justify-content: center;
+    width: 100%;
+  }
+}

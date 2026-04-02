@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply for a Loan | Remnant Orvex Capital</title>
+<link rel="stylesheet" href="/client/styles.css">
+<script defer src="/client/apply.js"></script>
+</head>
+<body>
+<div class="shell">
+  <header class="site-header">
+    <div class="brand">Remnant Orvex Capital</div>
+    <nav class="nav" aria-label="Primary">
+      <a href="/client/apply.html">Apply</a>
+      <a href="/health">API Health</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Request a loan after you sign in.</h1>
+    <p>This form matches the live API. You must already be authenticated, email-verified, and meet the verification requirements enforced by the server.</p>
+  </section>
+
+  <main class="content">
+    <section class="card stack">
+      <div class="status" data-tone="muted">
+        This page submits to <code>/api/loans/create</code> with your existing session cookie. If you are not signed in, the API will return <code>401</code>.
+      </div>
+
+      <form id="loan-form" class="stack" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="principal">Loan Amount (MWK)</label>
+            <input id="principal" name="principal" type="number" inputmode="decimal" min="10000" max="1000000000" step="0.01" required>
+            <div class="hint">Minimum 10,000 MWK. The backend enforces the exact amount rules.</div>
+          </div>
+
+          <div class="field">
+            <label for="duration_days">Repayment Duration</label>
+            <select id="duration_days" name="duration_days" required>
+              <option value="">Select a duration</option>
+              <option value="7">7 days</option>
+              <option value="14">14 days</option>
+              <option value="21">21 days</option>
+              <option value="30">30 days</option>
+            </select>
+            <div class="hint">Only the allowed durations are accepted by the API.</div>
+          </div>
+        </div>
+
+        <button id="submit-button" type="submit">Submit Loan Request</button>
+        <div id="form-status" class="status" data-tone="muted" aria-live="polite">Waiting for input.</div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Requests are validated and authorized server-side before any loan is created.
+  </footer>
+</div>
+</body>
+</html>

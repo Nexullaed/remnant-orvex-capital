@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify Email | Remnant Orvex Capital</title>
+<link rel="stylesheet" href="/client/styles.css">
+<script defer src="/client/verify-email.js"></script>
+</head>
+<body>
+<div class="shell">
+  <section class="hero">
+    <h1>Verifying your email</h1>
+    <p>Your token stays in the URL fragment, which keeps it out of request logs. This page submits it to the API using a POST request.</p>
+  </section>
+
+  <main class="content">
+    <section class="card stack">
+      <div id="verify-status" class="status" data-tone="muted" aria-live="polite">Preparing verification request...</div>
+      <a href="/client/apply.html">Go to the loan request page</a>
+    </section>
+  </main>
+</div>
+</body>
+</html>

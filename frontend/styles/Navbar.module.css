@@ -1,0 +1,148 @@
+.navbar {
+  align-items: center;
+  background: linear-gradient(135deg, #10345c 0%, #1a4f87 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(16, 52, 92, 0.18);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.4rem;
+  position: relative;
+}
+
+.logo a {
+  color: #ffffff;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.navLinks {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuButton {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.menuButton:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.link,
+.logoutButton {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: #f6fbff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.96rem;
+  font-weight: 600;
+  padding: 0.72rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.link:hover,
+.logoutButton:hover,
+.linkActive {
+  background: rgba(255, 204, 0, 0.14);
+  color: #ffd24a;
+  transform: translateY(-1px);
+}
+
+.logoutButton {
+  font: inherit;
+}
+
+.bar {
+  background: #ffffff;
+  border-radius: 999px;
+  display: block;
+  height: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  width: 18px;
+}
+
+.menuButtonOpen .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuButtonOpen .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonOpen .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navLinks {
+    align-items: stretch;
+    background: linear-gradient(180deg, rgba(10, 35, 63, 0.98) 0%, rgba(18, 61, 106, 0.98) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(9, 28, 51, 0.28);
+    flex-direction: column;
+    gap: 0.35rem;
+    opacity: 0;
+    padding: 0.8rem;
+    pointer-events: none;
+    position: absolute;
+    right: 1rem;
+    top: calc(100% + 0.75rem);
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    visibility: hidden;
+    width: min(260px, calc(100vw - 2rem));
+    z-index: 10;
+  }
+
+  .navLinksOpen {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .navLinks li {
+    width: 100%;
+  }
+
+  .link,
+  .logoutButton {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+}
