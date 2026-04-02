@@ -12,14 +12,16 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "frontend:build": "npm --prefix frontend run build",
-    "frontend:dev": "npm --prefix frontend run dev",
-    "frontend:start": "npm --prefix frontend run start",
-    "start": "node server/server.js",
-    "security:scan-secrets": "node scripts/scan-secrets.js",
-    "test": "node --test --test-isolation=none \"test/**/*.test.js\""
-  },
-  "dependencies": {
+  "build": "npm --prefix frontend run build",
+  "start": "node server/server.js",
+  "frontend:build": "npm --prefix frontend run build",
+  "frontend:dev": "npm --prefix frontend run dev",
+  "frontend:start": "npm --prefix frontend run start",
+  "security:scan-secrets": "node scripts/scan-secrets.js",
+  "test": "node --test --test-isolation=none \"test/**/*.test.js\""
+}
+
+  ,"dependencies": {
     "africastalking": "^0.7.9",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
